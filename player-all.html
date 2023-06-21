@@ -1,0 +1,28 @@
+<h1>Player List</h1>
+<section>
+  <form id="addPlayerForm">
+    <fieldset>
+      <legend>Add New Player</legend>
+      <input type="text" id="newPlayerName" placeholder="Enter player name" required />
+      <button type="submit" (click)="addPlayer(newPlayerName.value); newPlayerName.value=''">Add Player</button>
+    </fieldset>
+  </form>
+</section>
+<section>
+  <table>
+    <thead>
+      <tr>
+        <th>Player Names</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let player of players">
+      <tr>
+        <td>{{player.name}}</td>
+        <td>
+          <button class="deleteBtn" title="delete player" (click)="removePlayer(player)">Remove</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</section>
